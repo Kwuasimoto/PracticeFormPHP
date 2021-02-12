@@ -11,18 +11,34 @@
 
 <?php
 // Becuase the form is POST, we want to capture the form using the POST global variable
-    pre_r($_POST)
+pre_r($_POST);
+pre_r($_GET);
+
+// Now that we have the post data, we need to make sure the submit var exists
+// using if (isset(global))
+
+if (isset($_GET['submit'])) {
+//if (isset($_POST['submit'])) { // If the submit POST is set (Form Submitted).
+    // Using a string literal for template
+    // dot operator works for chaining functionality, need to learn the limitations of this.
+    echo "First name: " . $_GET['firstname'] . '<br />';
+    echo "Last name: " . $_GET['lastname'] . '<br />';
+
+}
 ?>
+<hr>
 
-<form action="" method="post">
-
+<!--<form action="" method="post">-->
+<form action="" method="get">
     <label for="firstname">firstname</label>
     <input type="text" name="firstname" , value="">
 
     <label for="lastname">lastname</label>
     <input type="text" name="lastname" , value="">
 
-    <button type="submit">Submit</button>
+    <hr>
+
+    <button type="submit" name="submit" value="submit">Submit</button>
 </form>
 
 </body>
@@ -35,4 +51,41 @@ function pre_r($array)
     print_r($array);
     echo '</pre>';
 }
+
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
