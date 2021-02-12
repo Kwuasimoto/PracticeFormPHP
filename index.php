@@ -11,7 +11,7 @@
 
 <?php
 // Becuase the form is POST, we want to capture the form using the POST global variable
-
+    pre_r($_POST)
 ?>
 
 <form action="" method="post">
@@ -22,6 +22,7 @@
     <label for="lastname">lastname</label>
     <input type="text" name="lastname" , value="">
 
+    <button type="submit">Submit</button>
 </form>
 
 </body>
@@ -29,12 +30,9 @@
 
 <?php
 function pre_r($array)
-{
-
+{ // We can notice that the data is yoinked in as an array, with the top input elements arriving at the top of the stack.
     echo '<pre>';
     print_r($array);
     echo '</pre>';
-
-
 }
 ?>
